@@ -11,7 +11,9 @@ This document will guide you through the following activities:
 
 We prepared a sandboxed Workshop Testnet for your Elrond Node to be a part of during this Workshop. The Workshop Testnet already contains 20 Nodes managed by Elrond. These Nodes are connected as "Validators", which means they will be executing Transactions and SmartContracts, and they will be the ones generating the Blocks to be added to the Blockchain. Your Node, on the other hand, will connect to the Workshop Testnet as an Observer, not as a Validator. This means that it will be continuously synchronized with the Workshop Testnet, but will not take part in the Block-producing Consensus process - that is a resource-intensive task and it is the responsibility of the Validators to fulfill.
 
-The Elrond Node currently supports GNU/Linux and MacOS (Windows support is in development). Please follow the instructions below, choosing those pertaining to your OS. Note that the last installation command for both OSes is an installation script. For details about what it does, see [The installation script](#the-installation-script) below.
+The Elrond Node currently supports GNU/Linux and MacOS (Windows support is in development). Please follow the instructions below, choosing those pertaining to your OS. We made this process as easy as possible. Note that the last installation command for both OSes is an installation script. For details about what it does, see [The installation script](#the-installation-script) below.
+
+In case you're running a GNU/Linux distribution *other* than Ubuntu or Debian you will have to substitute `apt-get` commands for their equivalent for your distribution. For example, on RHEL, Fedora and CentOS you should run `sudo dnf install -y git wget curl` instead.
 
 Now, to begin the installation open your favorite terminal application and navigate to an empty directory that will serve as the workbench.
 
