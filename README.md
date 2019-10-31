@@ -79,10 +79,14 @@ The Nodes of the Elrond Network support the execution of user-developed SmartCon
 
 Writing and deploying a SmartContract to the Workshop Testnet is part of today's Workshop. To get started, you will need an IDE. Elrond has developed the Elrond IDE, an extension for Visual Studio Code which makes it easy to write your SmartContracts, execute them, test them and deploy them.
 
-Please follow the instructions below to install the IDE:
-1. If you don't have Visual Studio Code already, download and install it from here: https://code.visualstudio.com/download
-1. Download the Elrond IDE extension for Visual Studio Code, packaged as a VSIX file, from
+Please follow the instructions below to install and prepare the IDE.
+
+### Visual Studio Code
+
+If you don't have Visual Studio Code already, download and install it from here: https://code.visualstudio.com/download. Next, download the Elrond IDE extension for Visual Studio Code, packaged as a VSIX file, from
 https://github.com/ElrondNetwork/vscode-elrond-c/releases/latest. From the list of Assets, choose the first: `vscode-elrond-ide-0.N.N.vsix`.
+
+### The Elrond IDE extension
 
 Next we'll install the Elrond IDE extension:
 1. Open Visual Studio Code.
@@ -97,7 +101,7 @@ Next we'll install the Elrond IDE extension:
 7. Wait for the notification "Completed installing the extension Elrond IDE".
 8. Restart Visual Studio Code.
 
-
+### Configuring Elrond IDE
 
 4) Adjust settings: `Ctrl+Shift+P`, command `open settings (UI)`. Search for `elrond*` settings. They are as follows:
 
