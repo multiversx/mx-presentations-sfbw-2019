@@ -21,23 +21,22 @@ Now, to begin the installation open your favorite terminal application and navig
 
 Some of the following commands will request root access using `sudo`. Make sure your user belongs to the `wheel` group before running them (to see the groups you currently belong, run `groups` in a terminal). 
 
-Open a terminal and run these commands, one by one:
+In the open terminal application run these commands, one by one:
 ```
 sudo apt-get install git wget curl -y
 git clone https://github.com/ElrondNetwork/elrond-go-scripts --single-branch --branch sf2019
 cd elrond-go-scripts/ubuntu-amd64/
 ./install.sh
 ```
-
 After launching the last command, follow the on-screen instructions. 
 * When prompted for a name for your Node, provide any memorable name you like.
 * When prompted with `Options for starting your Elrond Node`, choose `front` to have the Elrond Node started using its informative real-time Terminal UI.
 
 ### Installing on MacOS:
 
-Some of the following commands will request root access using `sudo`.
+Some of the following commands will request root access using `sudo`. You will also need `brew` before running the following commands. If you don't have `brew` on your system, see its [official website](https://brew.sh/).
 
-You will also need `brew` before running the following commands. If you don't have `brew` on your system, see its [official website](https://brew.sh/).
+In the open terminal application run these commands, one by one:
 
 ```
 brew install git wget curl
@@ -87,9 +86,11 @@ https://github.com/ElrondNetwork/vscode-elrond-c/releases/latest. From the list 
 1. Install the Elrond IDE extension by following these steps:
       1. Open Visual Studio Code.
       1. Press `Ctrl+Shift+P` to open the VS Code command prompt.
-      1. Use the arrow keys to select the command `Install from VSIX`.
+      1. Type in the word `vsix`
+      1. When the command `Install from VSIX` is selected, press Enter.
       1. Browse to the downloaded VSIX file and select it.
       1. Click the "Install" button.
+      1. Wait for the notification "Completed installing the extension Elrond IDE".
       1. Restart Visual Studio Code.
 
 ![](images/003_install_extension.png)
