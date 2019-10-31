@@ -13,8 +13,6 @@ We prepared a sandboxed Workshop Testnet for your Elrond Node to be a part of du
 
 The Elrond Node currently supports GNU/Linux and MacOS (Windows support is in development). Please follow the instructions below, choosing those pertaining to your OS. Note that the last installation command for both OSes is an installation script. For details about what it does, see [The installation script](#the-installation-script) below.
 
-Please note that the installation script will prompt you to provide a name for your Elrond Node instance. You can input any name you like.
-
 Now, to begin the installation open your favorite terminal application and navigate to an empty directory that will serve as the workbench.
 
 ### Installing on GNU/Linux:
@@ -29,7 +27,9 @@ cd elrond-go-scripts/ubuntu-amd64/
 ./install.sh
 ```
 
-After launching the last command, follow the on-screen instructions. When prompted with `Options for starting your Elrond Node`, choose `front` to have the Elrond Node started using its informative real-time Terminal UI.
+After launching the last command, follow the on-screen instructions. 
+* When prompted for a name for your Node, provide any memorable name you like.
+* When prompted with `Options for starting your Elrond Node`, choose `front` to have the Elrond Node started using its informative real-time Terminal UI.
 
 ### Installing on MacOS:
 
@@ -43,8 +43,9 @@ git clone https://github.com/ElrondNetwork/elrond-go-scripts --single-branch --b
 cd elrond-go-scripts/darwin-amd64/
 ./install.sh
 ```
-
-After launching the last command, follow the on-screen instructions. When prompted with `Options for starting your Elrond Node`, choose `front` to have the Elrond Node started using its informative real-time Terminal UI.
+After launching the last command, follow the on-screen instructions. 
+* When prompted for a name for your Node, provide any memorable name you like.
+* When prompted with `Options for starting your Elrond Node`, choose `front` to have the Elrond Node started using its informative real-time Terminal UI.
 
 ### The installation script
 
