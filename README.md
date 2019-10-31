@@ -83,16 +83,19 @@ Please follow the instructions below to install the IDE:
 1. If you don't have Visual Studio Code already, download and install it from here: https://code.visualstudio.com/download
 1. Download the Elrond IDE extension for Visual Studio Code, packaged as a VSIX file, from
 https://github.com/ElrondNetwork/vscode-elrond-c/releases/latest. From the list of Assets, choose the first: `vscode-elrond-ide-0.N.N.vsix`.
-1. Install the Elrond IDE extension by following these steps:
-      1. Open Visual Studio Code.
-      1. Press `Ctrl+Shift+P` to open the VS Code command prompt.
-      1. Type in the word `vsix`
-      1. When the command `Install from VSIX` is selected, press Enter.
-      ![](images/003_install_extension.png)
-      1. Browse to the downloaded VSIX file and select it.
-      1. Click the "Install" button.
-      1. Wait for the notification "Completed installing the extension Elrond IDE".
-      1. Restart Visual Studio Code.
+
+Next we'll install the Elrond IDE extension:
+1. Open Visual Studio Code.
+1. Press `Ctrl+Shift+P` to open the VS Code command prompt.
+1. Type in the word `vsix`
+1. When the command `Install from VSIX` is selected, press Enter.
+
+![](images/003_install_extension.png)      
+
+5. Browse to the downloaded VSIX file and select it.
+6. Click the "Install" button.
+7. Wait for the notification "Completed installing the extension Elrond IDE".
+8. Restart Visual Studio Code.
 
 
 
