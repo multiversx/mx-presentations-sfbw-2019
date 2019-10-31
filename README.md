@@ -105,7 +105,7 @@ Next we'll install the Elrond IDE extension into Visual Studio Code:
 
 We need to configure and prepare the IDE before its first use. We automated this process: the IDE will download all its dependencies and configure itself with a minimum of input from you. These dependencies are:
 - A subset of the [LLVM](https://llvm.org) suite (namely `clang`, `llc`, `wasm-ld`).
-- The [Elrond Debug Node](https://github.com/ElrondNetwork/elrond-go-node-debug), a lightweight version of the Elrond node, containing extra functionality dedicated to SsmartContract development.
+- The [Elrond Debug Node](https://github.com/ElrondNetwork/elrond-go-node-debug), a lightweight version of the Elrond node, containing extra functionality dedicated to SsmartContract development. *This is not the same Node you installed in the first part of this document.*
 
 First, we set up a folder to be used by the IDE for its dependencies:
 1. Press `Ctrl+Shift+P` to open the VS Code command prompt (we'll do this a lot).
@@ -115,7 +115,7 @@ First, we set up a folder to be used by the IDE for its dependencies:
 
 ![](images/004_adjust_settings.png)
 
-5. We focus on the setting `Elrond: IDE Folder` (the rest must stay unchanged). Set this to a folder like `~/Elrond/IDE`. Note that the settings are saved automatically as you type. When you're done, close the entire `Settings` tab.
+5. We focus on the setting `Elrond: IDE Folder` (the rest must stay unchanged). Set this to a folder like `/<home>/<username>/Elrond/IDE`. Note that the settings are saved automatically as you type. When you're done, close the entire `Settings` tab.
 
 Now we will make the IDE download and prepare its dependencies.
 1. Press `Ctrl+Shift+P` to open the VS Code command prompt once again. 
@@ -148,91 +148,96 @@ The result of these steps is that the configured IDE folder should have the foll
         └── wasm-ld
 ```
 
-Next, we need to set up a home folder for our SmartContracts.
+You should keep the `Elrond IDE` tab open for the duration of this Workshop because you'll use it a lot. In case you've closed it already: 
+1. Press `Ctrl+Shift+P` to open the VS Code command prompt. 
+1. Type in the words `elrond`, select the `Elrond - open IDE` command and press Enter.
+
+As a final (yet important) step, we need to set up a home folder for our SmartContracts.
 1. In Visual Studio Code, go to File > Open folder... 
 1. Navigate to an empty folder where you'd like to keep your SmartContracts. We recommend creating `~/Desktop/SmartContracts` and opening it in VS Code.
-1. Click `Open`.
  
 We are now done preparing the IDE. Let's see how a SmartContract looks like.
  
+### Writing SmartContracts
 
+To get you started, we prepared a couple of SmartContract templates. We'll focus on an ERC20-like SmartContract for now. Let's create a SmartContract from the template `erc20-c` bundled with the Elrond IDE.
 
-
-
-
-8) Create a smart contract from an existing list of prototypes (templates). `Ctrl+Shift+P`, command `Elrond - create smart contract from prototype (template)`.
+1. Press `Ctrl+Shift+P`, type in the word `elrond` and select the command `Elrond - create smart contract from prototype (template)`.
 
 ![](images/008_create_sc.png)
 
-You will be asked to pick the prototype (template) from a list of given prototypes. Choose `erc20-c`.
+2. You will be asked to pick the template from a list of given prototypes. Choose `erc20-c`.
 
 ![](images/008_create_sc_2.png)
 
-Then, you shall provide a name for the smart contract subproject.
+3. Enter a name for your SmartContract.
 
 ![](images/008_create_sc_3.png)
 
-In the end, a folder is created for you in the workspace.
+4. A subfolder is created for your new SmartContract in the `SmartContracts` folder. You can explore its contents. The file containing the actual SmartContract code is the `.c` file within the subfolder of your SmartContract. Feel free to take a look.
 
 ![](images/008_create_sc_4.png)
 
+Let's compile the SmartContract to WASM! You now need to tell the Elrond IDE to rescan your `SmartContracts` folder, to detect all the SmartContracts in it. For that, you need to go to the `Elrond IDE` tab. If it's not open, press `Ctrl+Shift+P` and run the command `Elrond - open IDE`.
 
-9) Go to **Home** tab. Hit **Refresh** to list the `.c` smart contracts in the workspace.
+1. In the `Elrond IDE` tab, click `Home`, then the `Refresh` button. You will see a list of the detected SmartContracts, including your newly created one.
 
 ![](images/009_refresh_list_of_contracts.png)
 
-You should see the newly created smart contract project in the list.
-
-10) Hit **Build** to obtain the WASM bytecode.
+2. Click the `Build` button to compile the SmartContact. A few more files will appear in your SmartContract subfolder: the `.wasm` file we're interested in, and a few others such as `.wasm.hex` and `.wasm.hex.arwen`.
 
 ![](images/010_build.png)
 
-In addition to the `.wasm` file, other files are created as well, such as: `.wasm.hex`, `wasm.hex.arwen`.
-
-Go to **Build output** to inspect the logs.
+3. Click `Build output` at the top of the `Elrond IDE` page to inspect the logs.
 
 ![](images/010_build_2.png)
 
-Also, you can go to the **Output channel** called **ElrondIDE - exec** to inspect the logs.
+4. You can find the same information on the `Output` pane at the bottom of the screen if you select `ElrondIDE - exec` in the dropdown selector at the right of the `Output` pane.
 
 ![](images/010_build_3.png)
 
-11) From the **Home** tab, **start node-debug**.
+Let's get the SmartContract to run. For that, we'll need the Debug Node.
+
+1) On the `Elrond IDE` tab, go to `Home` and click the `Start node-debug` button. You should see a lot of text in the `Output` pane at the bottom, as well as the notification `node-debug started`.
 
 ![](images/011_node_debug.png)
+![](images/011_node_debug_3.png)
 
-Go to **Debugger output** to inspect the logs.
+2) On the `Elrond IDE` tab, go to `Debugger output` to inspect the logs. 
 
 ![](images/011_node_debug_2.png)
 
-Also, you can go to the **Output channel** called **ElrondIDE - exec** to inspect the logs.
+Our Debug Node is running and ready to accept commands. Let's deploy our SmartContract to the Debug Node (as the compiled WASM bytecode we built a few steps above).
 
-![](images/011_node_debug_3.png)
-
-
-12) In order to deploy the smart contract on node-debug, hit **Deploy**.
+1. In order to deploy the smart contract on the Debug Node, open the `Elrond IDE` tab and go to `Home`. In the list of SmartContracts, click the `Deploy` button (**not yet** `Deploy on Testnet`!).
 
 ![](images/012_deploy.png)
 
-Fill in the form, then hit **Deploy**. Note that the sender account - who will own the smart contract - should already exist in `genesis.json` file of `node-debug`.
+2. A form will appear. We need to fill it in. 
+      1. A good value for `Sender address` would be `18e6af48dad7fd4902991efb019e741e0f2a7a192c8678b1da3f4cf42c164519`. It's one of the addresses preconfigured in the Debug Node's `genesis.json`, therefore the Debug Node thinks it is a real account. This will be the **Owner** account of the SmartContract.
+      1. In the textarea `Deploy (init) arguments` we should simply write `5000`. Why? Because our toy ERC20 contract is written in such a way as to accept as its only argument at deploy time the total amount of tokens it can work with.
+      1. Leave the rest of the fields to their defaults, then confirm by clicking `Deploy`.
 
 ![](images/012_deploy_2.png)
 
-Inspect the address of the smart contract.
+3. Inspect the address of the SmartContract (this is not the address of the Owner account). We will need it soon.
 
 ![](images/012_deploy_3.png)
 
-As noted before, inspect the output and logs of node-debug (from the tab **Debugger output** or from the `Output channel` of Visual Studio Code).
-
-Inspect the REST dialogue between the vscode extension and the HTTP endpoint of node-debug.
+As noted before, inspect the output and logs of node-debug (from the `Debugger output` on the `Elrond IDE` tab or in the bottom panel of Visual Studio Code). You can also inspect the REST dialogue between the Elrond IDE and the HTTP endpoint of the Debug Node.
 
 ![](images/012_deploy_4.png)
 
-13) Since the smart contract is now deployed on the **node-debug**, you can **run** an exported function. Hit **Run function**.
+The SmartContract is now deployed to the Debug Node! This means that the Debug Node can now execute one of the functions of the SmartContract. Let's do that.
+
+1. Go to `Home` on the `Elrond IDE` tab, scroll down to our SmartContract and click `Run function`.
 
 ![](images/013_run.png)
 
-Fill in the form, then hit **Run**. Note the **0x** prefix of the function argument. This instructs the IDE to not double hex-encode the parameter. Let's run ``do_balance`` for the account that owns the smart contract.
+3. A form will appear.
+      1. In the `Sender address` field, paste this address (another valid debug address): `22c2e3721a6256a5891ba612ad55343dceb6655388176f981ab2885ed756d6fd`.
+      1. In the `Function name` field, write `do_balance`. It's one of the functions of our SmartContract.
+      1. The function `do_balance` expects a single argument: the address of the account we want to know the balance of. We want to know the balance of `22c2e3721a6256a5891ba612ad55343dceb6655388176f981ab2885ed756d6fd` (same as the `Sender address`, just in this case). **When pasting addresses or other hexadecimal numbers in the `Function arguments` textbox, always prefix them with `Ox`, so that the IDE knows not to encode it to hexadecimal** - normally, all arguments are encoded to hexadecimal.
 
 ![](images/013_run_2.png)
 
