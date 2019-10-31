@@ -157,7 +157,7 @@ Inspect the REST dialogue between the vscode extension and the HTTP endpoint of 
 
 ![](images/012_deploy_4.png)
 
-13) Since the smart contract is now deployed on the **node-debug**, you can **run** an exported function. Hit **Run**.
+13) Since the smart contract is now deployed on the **node-debug**, you can **run** an exported function. Hit **Run function**.
 
 ![](images/013_run.png)
 
@@ -192,3 +192,17 @@ The private key should be the `txSign` PEM file.
 Inspect the address of the smart contract.
 
 ![](images/014_deploy_testnet_3.png)
+
+15) Since the smart contract is now deployed on the **testnet**, you can **run** an exported function. Hit **Run function on Testnet**.
+
+![](images/015_run_testnet.png)
+
+Fill in the form, then hit **Run**. Let's run ``transfer_token``.
+
+![](images/015_run_testnet_2.png)
+
+After execution, let's check the balances of the owner account, and the account we've sent tokens to. In order to do this, we'll use the query form in the **Query Testnet** tab.
+
+![](images/015_run_testnet_3.png)
+
+![](images/015_run_testnet_4.png)
