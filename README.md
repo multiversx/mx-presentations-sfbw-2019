@@ -88,8 +88,8 @@ https://github.com/ElrondNetwork/vscode-elrond-c/releases/latest. From the list 
       1. Press `Ctrl+Shift+P` to open the VS Code command prompt.
       1. Type in the word `vsix`
       1. When the command `Install from VSIX` is selected, press Enter.
-      
-![](images/003_install_extension.png)
+    
+      ![](images/003_install_extension.png)
       
       1. Browse to the downloaded VSIX file and select it.
       1. Click the "Install" button.
