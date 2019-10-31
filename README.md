@@ -1,37 +1,65 @@
 # San Francisco Blockchain Week 2019 Workshop
 
-## Part 1: become a validator on a sandboxed Elrond Testnet:
-### Become a validator when running a linux OS:
+Welcome to the Elrond Network Workshop! 
+
+This document will guide you through the following activities:
+
+1. Install your own Elrond Node and connect it to the sandboxed Workshop Testnet created specifically for this Workshop;
+2. Use the Elrond IDE extension for Visual Studio Code to develop, test and deploy your own SmartContract!
+
+## Part 1: Installing the Elrond Node and connecting it to the Workshop Testnet:
+
+We prepared a sandboxed Workshop Testnet for your Elrond Node to be a part of after installation. The Workshop Testnet already contains 20 Nodes, registered as "Validators". They will be executing Transactions and generating the Blocks to be added to the Blockchain. Your Node, on the other hand, will not connect to the Workshop Testnet as a Validator - it will connect as an Observer. This means that it will be continuously synchronized with the Workshop Testnet, but will not take part in the Consensus process - that is a resource-intensive task and it is the responsibility of the Validators to fulfill.
+
+The Elrond Node currently supports GNU/Linux and MacOS (Windows support is in development). Please follow the instructions below, choosing those pertaining to your OS. Note that the last installation command for both OSes is an installation script. For details about what it does, see [The installation script](#the-installation-script) below.
+
+Please note that the installation script will prompt you to provide a name for your Elrond Node instance. You can input any name you like.
+
+Now, to begin the installation open your favorite terminal application and navigate to an empty directory that will serve as the workbench.
+
+### Installing on GNU/Linux:
+
+Some of the following commands will request root access using `sudo`. Make sure your user belongs to the `wheel` group before running them (to see the groups you currently belong, run `groups` in a terminal). 
+
+Open a terminal and run these commands, one by one:
 ```
-sudo apt-get install git -y
+sudo apt-get install git wget curl -y
 git clone https://github.com/ElrondNetwork/elrond-go-scripts --single-branch --branch sf2019
 cd elrond-go-scripts/ubuntu-amd64/
 ./install.sh
 ```
 
-### Become a validator when running a Mac OS:
+After launching the last command, follow the on-screen instructions. When prompted with `Options for starting your Elrond Node`, choose `front` to have the Elrond Node started using its informative real-time Terminal UI.
+
+### Installing on MacOS:
+
+Some of the following commands will request root access using `sudo`.
+
+You will also need `brew` before running the following commands. If you don't have `brew` on your system, see its [official website](https://brew.sh/).
+
 ```
+brew install git wget curl
 git clone https://github.com/ElrondNetwork/elrond-go-scripts --single-branch --branch sf2019
 cd elrond-go-scripts/darwin-amd64/
 ./install.sh
 ```
 
-When prompted to enter a name just add a custom string and then you can start the node by choosing the option `front`
-The credentials are generated automatically and, by default, each new node will join the network as observer on shard 0. 
+After launching the last command, follow the on-screen instructions. When prompted with `Options for starting your Elrond Node`, choose `front` to have the Elrond Node started using its informative real-time Terminal UI.
 
+### The installation script
 
-### What the install.sh script does
+The installation script we prepared for the Workshop will perform the following steps:
+1. It downloads a `tar.gz` archive from https://github.com/ElrondNetwork/elrond-go/releases/tag/sf2019-1 which contains the following binaries: 
+      - `node`: the Elrond Node executable;
+      - `libwasmer_runtime_c_api`: a binary library used by the Node's Arwen VM to execute WASM SmartContracts.
+      - `keygenerator`: a utility used to generate cryptographic credentials;
+1. It will request root access using `sudo` to copy the `libwasmer_runtime_c_api` binary library into `/usr/lib` on GNU/Linux and into `/usr/local/lib` on Mac OS.
+1. It downloads the repository https://github.com/ElrondNetwork/elrond-config/tree/sf2019, which contains configuration files used by the Elrond Node executable to connect to the Workshop Testnet;
+1. It starts the Elrond Node and connects it to the Workshop Testnet.
 
-The following script lines download a github repo containing bash script that does the following:
-1. Install prerequisites like git, curl and wget (if missing);
-1. Download from https://github.com/ElrondNetwork/elrond-go/releases/tag/sf2019-1 required tar.gz archive file that contains the following binaries: 
-      - node - the elrond-go node binary;
-      - keygenerator - a simple tool to generate cryptographic credentials;
-      - libwasmer_runtime_c_api binary used by the Arwen VM.
-1. The script also clones a config repo from here: https://github.com/ElrondNetwork/elrond-config/tree/sf2019 that contain all required config files for the node binary to connect to the rest of the network;
-1. Please note that libwasmer_runtime_c_api binary si copied in /usr/lib (or /usr/local/lib in Mac OS) so that operation requires elevation.
+### After the installation
 
-###
+The newly installed Elrond Node will now start synchronizing itself with the Workshop Testnet. Please give it a few minutes.
 
 
 ## Part 2: Developing SmartContracts:
