@@ -63,14 +63,54 @@ https://github.com/ElrondNetwork/vscode-elrond-c/releases/
 
 ![](images/006_open_IDE.png)
 
-5) Go to tab "Environment", install dependencies (automatically):
-- A part of LLVM suite (clang, llc, wasm-ld).
-- "elrdon-do-node-debug": https://github.com/ElrondNetwork/elrond-go-node-debug
-- Golang build chain, required to build "elrond-go-node-debug".All these will be installed in the configured IDE folder.
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/005%20-%20setup%20environment.png)
+7) Go to tab **Environment**, and install dependencies (automatically):
+- A subset of [LLVM](https://llvm.org) suite (`clang`, `llc`, `wasm-ld`).
+- [elrdon-do-node-debug](https://github.com/ElrondNetwork/elrond-go-node-debug), a lightweight version of the Elrond node, necessary for smart contract development.
 
-6) Go to "Home" tab. Hit "Refresh" to list the .c smart contracts in the workspace.
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/006%20-%20refresh%20list%20of%20contracts.png)
+**All these will be installed in the configured IDE folder.**
+
+![](images/007_setup_environment.png)
+
+![](images/007_setup_environment_2.png)
+
+Upon setting up the environment, the configured IDE folder should have the following content:
+
+```
+    .
+    ├── node-debug
+    │   ├── config
+    │   │   ├── config.toml
+    │   │   └── genesis.json
+    │   └── debugWithRestApi
+    └── vendor-llvm
+        ├── clang-9
+        ├── llc
+        ├── lld
+        └── wasm-ld
+```
+
+8) Create a smart contract from an existing list of prototypes (templates). `Ctrl+Shift+P`, command `Elrond - create smart contract from prototype (template)`.
+
+![](images/008_create_sc.png)
+
+You will be asked to pick the prototype (template) from a list of given prototypes. Choose `erc20-c`.
+
+![](images/008_create_sc_2.png)
+
+Then, you shall provide a name for the smart contract subproject.
+
+![](images/008_create_sc_3.png)
+
+In the end, a folder is created for you in the workspace.
+
+![](images/008_create_sc_4.png)
+
+
+9) Go to **Home** tab. Hit **Refresh** to list the `.c` smart contracts in the workspace.
+
+![](images/009_refresh_list_of_contracts.png)
+
+You should see the newly created smart contract project in the list.
 
 7) Hit "Build" to obtain the WASM bytecode.
 ![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/007%20-%20build%20bytecode.png)
