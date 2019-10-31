@@ -7,7 +7,7 @@ This document will guide you through the following activities:
 1. Install your own Elrond Node and connect it to the sandboxed Workshop Testnet created specifically for this Workshop;
 2. Use the Elrond IDE extension for Visual Studio Code to develop, test and deploy your own SmartContract!
 
-## Part 1: Installing the Elrond Node and connecting it to the Workshop Testnet:
+## Part 1: Installing the Elrond Node and connecting it to the Workshop Testnet
 
 We prepared a sandboxed Workshop Testnet for your Elrond Node to be a part of during this Workshop. The Workshop Testnet already contains 20 Nodes managed by Elrond. These Nodes are connected as "Validators", which means they will be executing Transactions and SmartContracts, and they will be the ones generating the Blocks to be added to the Blockchain. Your Node, on the other hand, will connect to the Workshop Testnet as an Observer, not as a Validator. This means that it will be continuously synchronized with the Workshop Testnet, but will not take part in the Block-producing Consensus process - that is a resource-intensive task and it is the responsibility of the Validators to fulfill.
 
