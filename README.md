@@ -220,7 +220,7 @@ Our Debug Node is running and ready to accept commands. Let's deploy our SmartCo
 
 ![](images/012_deploy_2.png)
 
-3. Inspect the address of the SmartContract (this is not the address of the Owner account). We will need it soon.
+3. Inspect the address of the SmartContract (this is **not** the same address as the Owner account).
 
 ![](images/012_deploy_3.png)
 
@@ -235,13 +235,14 @@ The SmartContract is now deployed to the Debug Node! This means that the Debug N
 ![](images/013_run.png)
 
 3. A form will appear.
-      1. In the `Sender address` field, paste this address (another valid debug address): `22c2e3721a6256a5891ba612ad55343dceb6655388176f981ab2885ed756d6fd`.
+      1. In the `Sender address` field, paste this address: `18e6af48dad7fd4902991efb019e741e0f2a7a192c8678b1da3f4cf42c164519`. This us the same as the Owner address. We'll check its balance. It must have the `5000` tokens we initialized the ERC20 with. The Owner address is also the only address that has any tokens on our ERC20 so far - all others will have a balance of `0`.
       1. In the `Function name` field, write `do_balance`. It's one of the functions of our SmartContract.
-      1. The function `do_balance` expects a single argument: the address of the account we want to know the balance of. We want to know the balance of `22c2e3721a6256a5891ba612ad55343dceb6655388176f981ab2885ed756d6fd` (same as the `Sender address`, just in this case). **When pasting addresses or other hexadecimal numbers in the `Function arguments` textbox, always prefix them with `Ox`, so that the IDE knows not to encode it to hexadecimal** - normally, all arguments are encoded to hexadecimal.
+      1. The function `do_balance` expects a single argument: the address of the account we want to know the balance of. We want to know the balance of `18e6af48dad7fd4902991efb019e741e0f2a7a192c8678b1da3f4cf42c164519` (same as the `Sender address`, just in this case). **When pasting addresses or other hexadecimal numbers in the `Function arguments` textbox, always prefix them with `Ox`, so that the IDE knows not to encode it to hexadecimal** - normally, all arguments are encoded to hexadecimal, so the `Ox` prefix is used to escape the already-hexadecimal addresses.
+      1. Submit the form by clicking `Run`.
 
 ![](images/013_run_2.png)
 
-After execution, inspect the output (vmOutput) of run.
+After execution, inspect the output of `do_balance`.
 
 ![](images/013_run_3.png)
 
