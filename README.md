@@ -44,48 +44,61 @@ Install VSIX file in vscode.
 Ctrl+Shift+P, command "install from VSIX". Select the downloaded VSIX file. Install, restart vscode.
 [![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/001%20-%20install%20extension.png)]
 
-
 3) Adjust settings: Ctrl+Shift+P, command "open settings (UI)". Search for "elrond*" settings.
 - Configure "Elrond - download mirror".
 - Configure "Elrond - IDE folder".
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/003%20-%20adjust%20settings.png)]
 
 4) Open vscode in an empty folder (workspace), where development of smart contracts will take place.
 Ctrl+Shift+P, command "Elrond - open IDE"
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/004%20-%20open%20IDE.png)]
 
 5) Go to tab "Environment", install dependencies (automatically):
 - A part of LLVM suite (clang, llc, wasm-ld).
 - "elrdon-do-node-debug": https://github.com/ElrondNetwork/elrond-go-node-debug
 - Golang build chain, required to build "elrond-go-node-debug".All these will be installed in the configured IDE folder.
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/005%20-%20setup%20environment.png)]
 
 6) Go to "Home" tab. Hit "Refresh" to list the .c smart contracts in the workspace.
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/006%20-%20refresh%20list%20of%20contracts.png)]
 
 7) Hit "Build" to obtain the WASM bytecode.
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/007%20-%20build%20bytecode.png)]
 
 8) Go to "Build output" to inspect the logs.
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/008%20-%20build%20output.png)]
 
 9) Start node-debug.
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/009%20-%20start%20node-debug.png)]
 
 10) Deploy the smart contract on node-debug.
+[![]()]
 
 11) Inspect the address of the smart contract.
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/011%20-%20see%20scAddress.png)]
 
 12) Inspect the output of node-debug.
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/012%20-%20node-debug%20output.png)]
 
 13) Inspect the REST dialogue between the vscode extension and the HTTP endpoint of node-debug.
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/013%20-%20rest%20dialogue.png)]
 
 14) Run a function exported by the smart contract.
 
 15) Inspect the output (vmOutput) of run.
 
 16) Start a node on the testnet.
-./node --rest-api-port 9090
+./node
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/016%20-%20start%20node%20on%20testnet.png)]
 
 17) Hit "deploy on testnet" and choose the appropriate private key file. Then hit "deploy".
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/017%20%20-%20deploy%20on%20testnet.png)]
 
 18) Inspect the address of the smart contract.
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/018%20-%20see%20scAddress.png)]
 
 19) Run a function on the testnet. Don't forget to choose the appropriate private key file.
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/019%20-%20run%20on%20testnet.png)]
 
 20) Inspect balance of the account that ran the function.
-Use a browser, and navigate to http://localhost:{port}/address/{publicKey}
-
+Open testnet explorer and check account balance
