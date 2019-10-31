@@ -186,7 +186,7 @@ Inspect the REST dialogue between the vscode extension and the HTTP endpoint of 
 
 ![](images/012_deploy_4.png)
 
-13) Since the smart contract is now deployed on the **node-debug**, you can **run** an exported function. Hit **Run**.
+13) Since the smart contract is now deployed on the **node-debug**, you can **run** an exported function. Hit **Run function**.
 
 ![](images/013_run.png)
 
@@ -206,18 +206,32 @@ After execution, inspect the output (vmOutput) of run. Notice the storage update
 
 ![](images/013_run_5.png)
 
-16) Start a node on the testnet.
-./node
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/016%20-%20start%20node%20on%20testnet.png)
+14) Now let's deploy the smart contract on the testnet. Hit **Deploy on testnet**.
 
-17) Hit "deploy on testnet" and choose the appropriate private key file. Then hit "deploy".
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/017%20%20-%20deploy%20on%20testnet.png)
+![](images/014_deploy_testnet.png)
 
-18) Inspect the address of the smart contract.
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/018%20-%20see%20scAddress.png)
+Fill in the form, then hit **Deploy**. 
 
-19) Run a function on the testnet. Don't forget to choose the appropriate private key file.
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/019%20-%20run%20on%20testnet.png)
+**Note that the sender account - who will own the smart contract - should already have a balance account in the testnet.**
 
-20) Inspect balance of the account that ran the function.
-Open testnet explorer and check account balance
+The private key should be the `txSign` PEM file.
+
+![](images/014_deploy_testnet_2.png)
+
+Inspect the address of the smart contract.
+
+![](images/014_deploy_testnet_3.png)
+
+15) Since the smart contract is now deployed on the **testnet**, you can **run** an exported function. Hit **Run function on Testnet**.
+
+![](images/015_run_testnet.png)
+
+Fill in the form, then hit **Run**. Let's run ``transfer_token``.
+
+![](images/015_run_testnet_2.png)
+
+After execution, let's check the balances of the owner account, and the account we've sent tokens to. In order to do this, we'll use the query form in the **Query Testnet** tab.
+
+![](images/015_run_testnet_3.png)
+
+![](images/015_run_testnet_4.png)
