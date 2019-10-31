@@ -112,11 +112,21 @@ In the end, a folder is created for you in the workspace.
 
 You should see the newly created smart contract project in the list.
 
-7) Hit "Build" to obtain the WASM bytecode.
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/007%20-%20build%20bytecode.png)
+10) Hit **Build** to obtain the WASM bytecode.
 
-8) Go to "Build output" to inspect the logs.
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/008%20-%20build%20output.png)
+![](images/010_build.png)
+
+In addition to the `.wasm` file, other files are created as well, such as: `.wasm.hex`, `wasm.hex.arwen`.
+
+Go to **Build output** to inspect the logs.
+
+![](images/010_build_2.png)
+
+Also, you can go to the **Output channel** called **ElrondIDE - exec** to inspect the logs.
+
+![](images/010_build_3.png)
+
+///////////////
 
 9) Start node-debug.
 ![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/009%20-%20start%20node-debug.png)
