@@ -40,18 +40,28 @@ The following script lines download a github repo containing bash script that do
 
 2) Download latest released VSIX file (Visual Studio Code extension):
 https://github.com/ElrondNetwork/vscode-elrond-c/releases/
-Install VSIX file in vscode.
-Ctrl+Shift+P, command "install from VSIX". Select the downloaded VSIX file. Install, restart vscode.
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/001%20-%20install%20extension.png)
 
-3) Adjust settings: Ctrl+Shift+P, command "open settings (UI)". Search for "elrond*" settings.
-- Configure "Elrond - download mirror".
-- Configure "Elrond - IDE folder".
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/003%20-%20adjust%20settings.png)
+3) Install VSIX file in vscode.
+`Ctrl+Shift+P`, command `Install from VSIX`. Select the downloaded VSIX file. Install, restart vscode.
 
-4) Open vscode in an empty folder (workspace), where development of smart contracts will take place.
-Ctrl+Shift+P, command "Elrond - open IDE"
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/004%20-%20open%20IDE.png)
+![](images/003_install_extension.png)
+
+4) Adjust settings: `Ctrl+Shift+P`, command `open settings (UI)`. Search for `elrond*` settings. They are as follows:
+
+- Elrond - download mirror: `https://workshop.elrond.com/ElrondIDE`
+- **Elrond - IDE folder**: `/home/someone/Elrond/ide`
+- Elrond - rest api port: `8080`
+- Elrond - testnet URL: `https://wallet-workshop.elrond.com`
+
+**You only need to set `Elrond - IDE folder`. Note that dependencies will be downloaded to this folder.** 
+
+![](images/004_adjust_settings.png)
+
+5) In Visual Studio Code, open a folder (workspace). This is where development of smart contracts will take place. `Ctrl+Shift+P`, command `Open Folder`.
+
+6) Open **Elrond IDE**: `Ctrl+Shift+P`, command `Elrond - open IDE`.
+
+![](images/006_open_IDE.png)
 
 5) Go to tab "Environment", install dependencies (automatically):
 - A part of LLVM suite (clang, llc, wasm-ld).
