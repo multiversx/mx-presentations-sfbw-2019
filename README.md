@@ -21,18 +21,13 @@ The credentials are generated automatically and, by default, each new node will 
 
 
 ### What the install.sh script does
-
-The following script lines download a github repo containing bash script that does the following:
-1. Install prerequisites like git, curl and wget (if missing);
-1. Download from https://github.com/ElrondNetwork/elrond-go/releases/tag/sf2019-1 required tar.gz archive file that contains the following binaries: 
+1. Installs prerequisites like git, curl and wget (if missing);
+1. Downloads from https://github.com/ElrondNetwork/elrond-go/releases/tag/sf2019-1 the required tar.gz archive file that contains the following binaries: 
       - node - the elrond-go node binary;
       - keygenerator - a simple tool to generate cryptographic credentials;
       - libwasmer_runtime_c_api binary used by the Arwen VM.
-1. The script also clones a config repo from here: https://github.com/ElrondNetwork/elrond-config/tree/sf2019 that contain all required config files for the node binary to connect to the rest of the network;
-1. Please note that libwasmer_runtime_c_api binary si copied in /usr/lib (or /usr/local/lib in Mac OS) so that operation requires elevation.
-
-###
-
+1. The script also clones a config repo from here: https://github.com/ElrondNetwork/elrond-config/tree/sf2019 that contains all required config files for the node binary to connect to the rest of the network;
+1. Please note that libwasmer_runtime_c_api binary is copied in /usr/lib (or /usr/local/lib in Mac OS) so that operation requires elevation.
 
 ## Part 2: Developing SmartContracts:
 
