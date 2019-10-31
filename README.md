@@ -103,7 +103,7 @@ Next we'll install the Elrond IDE extension into Visual Studio Code:
 
 ### Preparing the Elrond IDE
 
-We need to configure and prepare it before its first use. We automated this process: the IDE will download all its dependencies and configure itself with a minimum of input from you. These dependencies are:
+We need to configure and prepare the IDE before its first use. We automated this process: the IDE will download all its dependencies and configure itself with a minimum of input from you. These dependencies are:
 - A subset of the [LLVM](https://llvm.org) suite (namely `clang`, `llc`, `wasm-ld`).
 - The [Elrond Debug Node](https://github.com/ElrondNetwork/elrond-go-node-debug), a lightweight version of the Elrond node, containing extra functionality dedicated to SsmartContract development.
 
@@ -123,7 +123,7 @@ Now we will make the IDE download and prepare its dependencies.
  
 ![](images/006_open_IDE.png)
  
-3. Now click on the `Environment` tab and read the information it gives to ensure everything is OK.
+3. Now click on the `Environment` tab and read the information it's giving you, just to make sure everything is OK.
  
 ![](images/007_setup_environment.png)
  
