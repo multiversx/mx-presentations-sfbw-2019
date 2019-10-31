@@ -83,11 +83,14 @@ Writing and deploying a SmartContract to the Workshop Testnet is part of today's
 Please follow the instructions below to install the IDE:
 1. If you don't have Visual Studio Code already, download and install it from here: https://code.visualstudio.com/download
 1. Download the Elrond IDE extension for Visual Studio Code, packaged as a VSIX file, from
-https://github.com/ElrondNetwork/vscode-elrond-c/releases/
+https://github.com/ElrondNetwork/vscode-elrond-c/releases/latest. From the list of Assets, choose the first: `vscode-elrond-ide-0.N.N.vsix`.
 1. Install the Elrond IDE extension by following these steps:
-      - Open Visual Studio Code
-      - 
-`Ctrl+Shift+P`, command `Install from VSIX`. Select the downloaded VSIX file. Install, restart vscode.
+      1. Open Visual Studio Code.
+      1. Press `Ctrl+Shift+P` to open the VS Code command prompt.
+      1. Use the arrow keys to select the command `Install from VSIX`.
+      1. Browse to the downloaded VSIX file and select it.
+      1. Click the "Install" button.
+      1. Restart Visual Studio Code.
 
 ![](images/003_install_extension.png)
 
