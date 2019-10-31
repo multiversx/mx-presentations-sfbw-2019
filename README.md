@@ -214,7 +214,7 @@ Our Debug Node is running and ready to accept commands. Let's deploy our SmartCo
 ![](images/012_deploy.png)
 
 2. A form will appear. We need to fill it in. 
-      1. A good value for `Sender address` would be `18e6af48dad7fd4902991efb019e741e0f2a7a192c8678b1da3f4cf42c164519`. It's one of the addresses preconfigured in the Debug Node's `genesis.json`, therefore the Debug Node thinks it is a real account. This will be the **Owner** account of the SmartContract.
+      1. A good value for `Sender address` would be `95fe2d76c72ada51156aed96d083c993d637d7a772fb48efeb8bc3f3cedc7237`. It's one of the addresses preconfigured in the Debug Node's `genesis.json`, therefore the Debug Node thinks it is a real account. This will be the **Owner** account of the SmartContract.
       1. In the textarea `Deploy (init) arguments` we should simply write `5000`. Why? Because our toy ERC20 contract is written in such a way as to accept as its only argument at deploy time the total amount of tokens it can work with.
       1. Leave the rest of the fields to their defaults, then confirm by clicking `Deploy`.
 
@@ -235,9 +235,9 @@ The SmartContract is now deployed to the Debug Node! This means that the Debug N
 ![](images/013_run.png)
 
 3. A form will appear.
-      1. In the `Sender address` field, paste this address: `18e6af48dad7fd4902991efb019e741e0f2a7a192c8678b1da3f4cf42c164519`. This us the same as the Owner address. We'll check its balance. It must have the `5000` tokens we initialized the ERC20 with. The Owner address is also the only address that has any tokens on our ERC20 so far - all others will have a balance of `0`.
+      1. In the `Sender address` field, paste this address: `95fe2d76c72ada51156aed96d083c993d637d7a772fb48efeb8bc3f3cedc7237`. This us the same as the Owner address. We'll check its balance. It must have the `5000` tokens we initialized the ERC20 with. The Owner address is also the only address that has any tokens on our ERC20 so far - all others will have a balance of `0`.
       1. In the `Function name` field, write `do_balance`. It's one of the functions of our SmartContract.
-      1. The function `do_balance` expects a single argument: the address of the account we want to know the balance of. We want to know the balance of `18e6af48dad7fd4902991efb019e741e0f2a7a192c8678b1da3f4cf42c164519` (same as the `Sender address`, just in this case). **When pasting addresses or other hexadecimal numbers in the `Function arguments` textbox, always prefix them with `Ox`, so that the IDE knows not to encode it to hexadecimal** - normally, all arguments are encoded to hexadecimal, so the `Ox` prefix is used to escape the already-hexadecimal addresses.
+      1. The function `do_balance` expects a single argument: the address of the account we want to know the balance of. We want to know the balance of `95fe2d76c72ada51156aed96d083c993d637d7a772fb48efeb8bc3f3cedc7237` (same as the `Sender address`, just in this case). **When pasting addresses or other hexadecimal numbers in the `Function arguments` textbox, always prefix them with `Ox`, so that the IDE knows not to encode it to hexadecimal** - normally, all arguments are encoded to hexadecimal, so the `Ox` prefix is used to escape the already-hexadecimal addresses.
       1. Submit the form by clicking `Run`.
 
 ![](images/013_run_2.png)
@@ -246,39 +246,40 @@ After execution, inspect the output of `do_balance`.
 
 ![](images/013_run_3.png)
 
-Run another function of the smart contract. That is, let's run ``transfer_token``.
+Let's run another function of the SmartContract. This time we run `transfer_token`. Click `Run function` again and fill the form as follows:
+i. `Sender address`: `95fe2d76c72ada51156aed96d083c993d637d7a772fb48efeb8bc3f3cedc7237` (the Owner account has all of the `5000` tokens so far, so let's send some to another account).
+ii. `Function name`: `transfer_token`
+iii. `Function arguments`: `0x8c93db70abe14a6aa8c4ca7b722b67f4342b4251c0f3731b12b5f75885a9b9b6` on the first line (note the `0x` prefix), and `1000` on the second line.
+
+Submit the form by clicking `Run`.
 
 ![](images/013_run_4.png)
 
-After execution, inspect the output (vmOutput) of run. Notice the storage updates. 
+After execution, inspect the output of `transfer_token`. Notice the storage updates.
 
 ![](images/013_run_5.png)
 
-14) Now let's deploy the smart contract on the testnet. Hit **Deploy on testnet**.
+Now let's deploy the SmartContract to the Workshop Testnet. On the `Elrond IDE` page, go to `Home` and click `Deploy on Testnet`.
 
 ![](images/014_deploy_testnet.png)
 
-Fill in the form, then hit **Deploy**. 
-
-**Note that the sender account - who will own the smart contract - should already have a balance account in the testnet.**
-
-The private key should be the `txSign` PEM file.
+For the form that opens up, you'll need your private key `.pem` file. Add it to the `Private key` field. Also, set the `Deploy (init) arguments` to `10000`. Remember that the `init` function of our SmartContract expects the total amount of tokens as the only argument. Leave all other fields unchanged and submit the form by clicking `Deploy`.
 
 ![](images/014_deploy_testnet_2.png)
 
-Inspect the address of the smart contract.
+Inspect the address of the SmartContract. This address is valid accross the Workshop Testnet and anyone who might want to execute functions from your SmartContract will need it.
 
 ![](images/014_deploy_testnet_3.png)
 
-15) Since the smart contract is now deployed on the **testnet**, you can **run** an exported function. Hit **Run function on Testnet**.
+Now that the SmartContract is deployed on the Workshop Testnet, you can run one of its functions. Let's do just that. Click `Run function`.
 
 ![](images/015_run_testnet.png)
 
-Fill in the form, then hit **Run**. Let's run ``transfer_token``.
+Fill in the form that appears, setting `Function name` to `transfer_token`, then submit by clicking `Run`.
 
 ![](images/015_run_testnet_2.png)
 
-After execution, let's check the balances of the owner account, and the account we've sent tokens to. In order to do this, we'll use the query form in the **Query Testnet** tab.
+After execution, let's check the balances of the Owner account, and the account we've sent tokens to. In order to do this, we'll use the query form in the `Query Testnet` subtab of the `Elrond IDE` tab.
 
 ![](images/015_run_testnet_3.png)
 
