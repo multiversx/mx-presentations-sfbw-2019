@@ -60,17 +60,31 @@ The installation script we prepared for the Workshop will perform the following 
 
 ### After the installation
 
-The newly installed Elrond Node will now start synchronizing itself with the Workshop Testnet. Please give it a few minutes.
+The newly installed Elrond Node will now start synchronizing itself with the Workshop Testnet. Please give it a few minutes. Let it run in the background for the rest of the Workshop.
+
+In case you need to start the Node again for some reason (you ran out of battery?), do the following:
+1. Open your favorite terminal application
+1. Navigate to the folder where you first performed the installation steps, then:
+      - on GNU/Linux, `cd cd elrond-go-scripts/ubuntu-amd64/start_scripts`
+      - on MacOs, `cd elrond-go-scripts/darwin-amd64/start_scripts`
+1. Execute `./start.sh`
+
+The Node will now start again. Give it a few moments to connect itself to the Workshop Testnet.
 
 
-## Part 2: Developing SmartContracts:
+## Part 2: Developing SmartContracts
 
-1) Download and install VSCode from here: https://code.visualstudio.com/download
+The Nodes of the Elrond Network support the execution of user-developed SmartContracts as part of Transactions. This means that anyone can write a SmartContract and publish it to the Elrond Network for other users to invoke. 
 
-2) Download latest released VSIX file (Visual Studio Code extension):
+Writing and deploying a SmartContract to the Workshop Testnet is part of today's Workshop. To get started, you will need an IDE. Elrond has developed the Elrond IDE, an extension for Visual Studio Code which makes it easy to write your SmartContracts, execute them, test them and deploy them.
+
+Please follow the instructions below to install the IDE:
+1. If you don't have Visual Studio Code already, download and install it from here: https://code.visualstudio.com/download
+1. Download the Elrond IDE extension for Visual Studio Code, packaged as a VSIX file, from
 https://github.com/ElrondNetwork/vscode-elrond-c/releases/
-
-3) Install VSIX file in vscode.
+1. Install the Elrond IDE extension by following these steps:
+      - Open Visual Studio Code
+      - 
 `Ctrl+Shift+P`, command `Install from VSIX`. Select the downloaded VSIX file. Install, restart vscode.
 
 ![](images/003_install_extension.png)
