@@ -126,26 +126,56 @@ Also, you can go to the **Output channel** called **ElrondIDE - exec** to inspec
 
 ![](images/010_build_3.png)
 
-///////////////
+11) From the **Home** tab, **start node-debug**.
 
-9) Start node-debug.
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/009%20-%20start%20node-debug.png)
+![](images/011_node_debug.png)
 
-10) Deploy the smart contract on node-debug.
-![]()
+Go to **Debugger output** to inspect the logs.
 
-11) Inspect the address of the smart contract.
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/011%20-%20see%20scAddress.png)
+![](images/011_node_debug_2.png)
 
-12) Inspect the output of node-debug.
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/012%20-%20node-debug%20output.png)
+Also, you can go to the **Output channel** called **ElrondIDE - exec** to inspect the logs.
 
-13) Inspect the REST dialogue between the vscode extension and the HTTP endpoint of node-debug.
-![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/013%20-%20rest%20dialogue.png)
+![](images/011_node_debug_3.png)
 
-14) Run a function exported by the smart contract.
 
-15) Inspect the output (vmOutput) of run.
+12) In order to deploy the smart contract on node-debug, hit **Deploy**.
+
+![](images/012_deploy.png)
+
+Fill in the form, then hit **Deploy**. Note that the sender account - who will own the smart contract - should already exist in `genesis.json` file of `node-debug`.
+
+![](images/012_deploy_2.png)
+
+Inspect the address of the smart contract.
+
+![](images/012_deploy_3.png)
+
+As noted before, inspect the output and logs of node-debug (from the tab **Debugger output** or from the `Output channel` of Visual Studio Code).
+
+Inspect the REST dialogue between the vscode extension and the HTTP endpoint of node-debug.
+
+![](images/012_deploy_4.png)
+
+13) Since the smart contract is now deployed on the **node-debug**, you can **run** an exported function. Hit **Run**.
+
+![](images/013_run.png)
+
+Fill in the form, then hit **Run**. Note the **0x** prefix of the function argument. This instructs the IDE to not double hex-encode the parameter. Let's run ``do_balance`` for the account that owns the smart contract.
+
+![](images/013_run_2.png)
+
+After execution, inspect the output (vmOutput) of run.
+
+![](images/013_run_3.png)
+
+Run another function of the smart contract. That is, let's run ``transfer_token``.
+
+![](images/013_run_4.png)
+
+After execution, inspect the output (vmOutput) of run. Notice the storage updates. 
+
+![](images/013_run_5.png)
 
 16) Start a node on the testnet.
 ./node
