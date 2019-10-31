@@ -247,9 +247,9 @@ After execution, inspect the output of `do_balance`.
 ![](images/013_run_3.png)
 
 Let's run another function of the SmartContract. This time we run `transfer_token`. Click `Run function` again and fill the form as follows:
-i. `Sender address`: `95fe2d76c72ada51156aed96d083c993d637d7a772fb48efeb8bc3f3cedc7237` (the Owner account has all of the `5000` tokens so far, so let's send some to another account).
-ii. `Function name`: `transfer_token`
-iii. `Function arguments`: `0x8c93db70abe14a6aa8c4ca7b722b67f4342b4251c0f3731b12b5f75885a9b9b6` on the first line (note the `0x` prefix), and `1000` on the second line.
+1. `Sender address`: `95fe2d76c72ada51156aed96d083c993d637d7a772fb48efeb8bc3f3cedc7237` (the Owner account has all of the `5000` tokens so far, so let's send some to another account).
+1. `Function name`: `transfer_token`
+1. `Function arguments`: `0x8c93db70abe14a6aa8c4ca7b722b67f4342b4251c0f3731b12b5f75885a9b9b6` on the first line (note the `0x` prefix), and `1000` on the second line.
 
 Submit the form by clicking `Run`.
 
