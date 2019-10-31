@@ -88,50 +88,51 @@ https://github.com/ElrondNetwork/vscode-elrond-c/releases/latest. From the list 
 
 ### The Elrond IDE extension
 
-Next we'll install the Elrond IDE extension:
+Next we'll install the Elrond IDE extension into Visual Studio Code:
 1. Open Visual Studio Code.
 1. Press `Ctrl+Shift+P` to open the VS Code command prompt.
 1. Type in the word `vsix`
-1. When the command `Install from VSIX` is selected, press Enter.
+1. When the command `Extensions: Install from VSIX...` is selected, press Enter.
 
 ![](images/003_install_extension.png)      
 
 5. Browse to the downloaded VSIX file and select it.
-6. Click the "Install" button.
-7. Wait for the notification "Completed installing the extension Elrond IDE".
-8. Restart Visual Studio Code.
+5. Click the "Install" button.
+5. Wait for the notification "Completed installing the extension Elrond IDE".
+5. Restart Visual Studio Code.
 
-### Configuring Elrond IDE
+### Preparing the Elrond IDE
 
-4) Adjust settings: `Ctrl+Shift+P`, command `open settings (UI)`. Search for `elrond*` settings. They are as follows:
+We need to configure and prepare it before its first use. We automated this process: the IDE will download all its dependencies and configure itself with a minimum of input from you. These dependencies are:
+- A subset of the [LLVM](https://llvm.org) suite (namely `clang`, `llc`, `wasm-ld`).
+- The [Elrond Debug Node](https://github.com/ElrondNetwork/elrond-go-node-debug), a lightweight version of the Elrond node, containing extra functionality dedicated to SsmartContract development.
 
-- Elrond - download mirror: `https://workshop.elrond.com/ElrondIDE`
-- **Elrond - IDE folder**: `/home/someone/Elrond/ide`
-- Elrond - rest api port: `8080`
-- Elrond - testnet URL: `https://wallet-workshop.elrond.com`
-
-**You only need to set `Elrond - IDE folder`. Note that dependencies will be downloaded to this folder.** 
+First, we set up a folder to be used by the IDE for its dependencies:
+1. Press `Ctrl+Shift+P` to open the VS Code command prompt (we'll do this a lot).
+1. Type in the words `settings ui`.
+1. When the command `Preferences: Open Settings (UI)` is selected, press Enter.
+1. The `Settings` tab opens in VS Code and the textbox `Searc settings` is highlighted. Type in the word `elrond`.
 
 ![](images/004_adjust_settings.png)
 
-5) In Visual Studio Code, open a folder (workspace). This is where development of smart contracts will take place. `Ctrl+Shift+P`, command `Open Folder`.
+5. We focus on the setting `Elrond: IDE Folder` (the rest must stay unchanged). Set this to a folder like `~/Elrond/IDE`. Note that the settings are saved automatically as you type. When you're done, close the entire `Settings` tab.
 
-6) Open **Elrond IDE**: `Ctrl+Shift+P`, command `Elrond - open IDE`.
-
+Now we will make the IDE download and prepare its dependencies.
+1. Press `Ctrl+Shift+P` to open the VS Code command prompt once again. 
+1. Type in the words `elrond`, select the `Elrond - open IDE` command and press Enter.
+ 
 ![](images/006_open_IDE.png)
-
-7) Go to tab **Environment**, and install dependencies (automatically):
-- A subset of [LLVM](https://llvm.org) suite (`clang`, `llc`, `wasm-ld`).
-- [elrdon-do-node-debug](https://github.com/ElrondNetwork/elrond-go-node-debug), a lightweight version of the Elrond node, necessary for smart contract development.
-
-**All these will be installed in the configured IDE folder.**
-
+ 
+3. Now click on the `Environment` tab and read the information it gives to ensure everything is OK.
+ 
 ![](images/007_setup_environment.png)
+ 
+4. Scroll downwards, where you'll see two buttons: `Get clang and llc` and `Install (reinstall) debug node`. 
+4. Click them both, in any order. When you'll see the notifications `node-debug ready` and `LLVM tools ready to use`, it means the dependencies have been downloaded properly.
 
 ![](images/007_setup_environment_2.png)
 
-Upon setting up the environment, the configured IDE folder should have the following content:
-
+The result of these steps is that the configured IDE folder should have the following contents:
 ```
     .
     ├── node-debug
@@ -145,6 +146,29 @@ Upon setting up the environment, the configured IDE folder should have the follo
         ├── lld
         └── wasm-ld
 ```
+
+
+Next, we need to set up a home folder for our SmartContracts.
+ 1. In Visual Studio Code, go to File > Open folder... 
+ 1. Navigate to an empty folder where you'd like to keep your SmartContracts. We recommend creating `~/Desktop/SmartContracts` and opening it in VS Code.
+ 1. Click `Open`.
+ 
+ 
+ 
+
+
+
+
+7) Go to tab **Environment**, and install dependencies (automatically):
+
+
+**All these will be installed in the configured IDE folder.**
+
+
+
+
+
+
 
 8) Create a smart contract from an existing list of prototypes (templates). `Ctrl+Shift+P`, command `Elrond - create smart contract from prototype (template)`.
 
