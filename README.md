@@ -42,7 +42,7 @@ The following script lines download a github repo containing bash script that do
 https://github.com/ElrondNetwork/vscode-elrond-c/releases/
 Install VSIX file in vscode.
 Ctrl+Shift+P, command "install from VSIX". Select the downloaded VSIX file. Install, restart vscode.
-![Alt text]("images/001 - install extension.png"?raw=true "Install vscode extension")
+[![](https://github.com/ElrondNetwork/sfbw2019/blob/master/images/001%20-%20install%20extension.png)]
 
 
 3) Adjust settings: Ctrl+Shift+P, command "open settings (UI)". Search for "elrond*" settings.
