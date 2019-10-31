@@ -128,9 +128,10 @@ Now we will make the IDE download and prepare its dependencies.
 ![](images/007_setup_environment.png)
  
 4. Scroll downwards, where you'll see two buttons: `Get clang and llc` and `Install (reinstall) debug node`. 
-4. Click them both, in any order. When you'll see the notifications `node-debug ready` and `LLVM tools ready to use`, it means the dependencies have been downloaded properly.
 
 ![](images/007_setup_environment_2.png)
+
+5. Click them both, in any order. When you'll see the notifications `node-debug ready` and `LLVM tools ready to use`, it means the dependencies have been downloaded properly.
 
 The result of these steps is that the configured IDE folder should have the following contents:
 ```
@@ -147,24 +148,13 @@ The result of these steps is that the configured IDE folder should have the foll
         └── wasm-ld
 ```
 
-
 Next, we need to set up a home folder for our SmartContracts.
- 1. In Visual Studio Code, go to File > Open folder... 
- 1. Navigate to an empty folder where you'd like to keep your SmartContracts. We recommend creating `~/Desktop/SmartContracts` and opening it in VS Code.
- 1. Click `Open`.
+1. In Visual Studio Code, go to File > Open folder... 
+1. Navigate to an empty folder where you'd like to keep your SmartContracts. We recommend creating `~/Desktop/SmartContracts` and opening it in VS Code.
+1. Click `Open`.
  
+We are now done preparing the IDE. Let's see how a SmartContract looks like.
  
- 
-
-
-
-
-7) Go to tab **Environment**, and install dependencies (automatically):
-
-
-**All these will be installed in the configured IDE folder.**
-
-
 
 
 
